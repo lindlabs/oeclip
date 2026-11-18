@@ -1,0 +1,12 @@
+node_modules
+data/
+exports/
+dist/
+.git
+.github
+.vscode
+.gemini
+*.log
+*.tmp
+.env
+

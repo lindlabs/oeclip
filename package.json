@@ -1,0 +1,56 @@
+{
+  "name": "oeclip",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OECLIP - editor de video local-first con motor FFmpeg y agente de IA modular",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "vite build",
+    "start": "tsx server/index.ts",
+    "mcp": "tsx server/mcp/stdio.ts",
+    "mcp:http": "tsx server/mcp/http.ts",
+    "mcp:config": "node scripts/mcp-config.mjs",
+    "mcp:config:http": "node scripts/mcp-config.mjs --http",
+    "mcp:check": "node scripts/mcp-smoke.mjs stdio",
+    "mcp:check:full": "node scripts/mcp-smoke.mjs stdio --full",
+    "mcp:check:http": "node scripts/mcp-smoke.mjs http",
+    "check:ai": "node scripts/check-provider.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-gcp.ps1",
+    "fixtures": "tsx scripts/make-fixtures.ts",
+    "demo": "tsx scripts/create-demo-project.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.0.3",
+    "@fastify/static": "^8.2.0",
+    "@huggingface/transformers": "^4.3.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@remotion/bundler": "^4.0.539",
+    "@remotion/renderer": "^4.0.539",
+    "adm-zip": "^0.6.1",
+    "fastify": "^5.4.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "remotion": "^4.0.539",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
+  }
+}
